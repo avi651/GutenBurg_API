@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gutenberg/constants/color_constants.dart';
-
 import '../helpers/color_from_hex.dart';
+import 'wid_txt.dart';
 
 // ignore: must_be_immutable
 class HomeListViewCard extends StatelessWidget {
@@ -22,14 +22,11 @@ class HomeListViewCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          height: 16.0,
-        ),
         SizedBox(
           height: 80,
           child: Card(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,7 +35,14 @@ class HomeListViewCard extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.only(left: 8.0),
                   ),
-                  Text(title ?? ""),
+                  //Text(title ?? ""),
+                  WidText(
+                    title: title ?? "",
+                    fontFamily: 'Montserrat-Black',
+                    widColor: parseColor(blackColor),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
                   const Spacer(),
                   Icon(Icons.east, size: 30.0, color: parseColor(blueColor)),
                 ],

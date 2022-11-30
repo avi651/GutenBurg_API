@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-
 import '../constants/color_constants.dart';
 import '../helpers/color_from_hex.dart';
 import 'wid_txt.dart';
 
 class DetailScreenBackWidget extends StatelessWidget {
-  const DetailScreenBackWidget({Key? key}) : super(key: key);
+  final String? detailHeaderTxt;
+  const DetailScreenBackWidget({Key? key, required this.detailHeaderTxt})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class DetailScreenBackWidget extends StatelessWidget {
           ),
           const Padding(padding: EdgeInsets.only(left: 16)),
           WidText(
-            title: "Fiction",
+            title: detailHeaderTxt,
             fontFamily: 'Montserrat-Black',
             widColor: parseColor(blueColor),
             fontSize: 40,

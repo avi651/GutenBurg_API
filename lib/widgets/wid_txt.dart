@@ -11,6 +11,7 @@ class WidText extends StatelessWidget {
   final int maxLine;
   final FontWeight fontWeight;
   final TextDecoration? textDecoration;
+  final TextAlign? textAlign;
 
   const WidText({
     Key? key,
@@ -24,6 +25,7 @@ class WidText extends StatelessWidget {
     this.textDecoration,
     required this.fontSize,
     required this.fontWeight,
+    this.textAlign,
   }) : super(key: key);
 
   @override
@@ -33,6 +35,7 @@ class WidText extends StatelessWidget {
       overflow: isOverflow ? TextOverflow.ellipsis : null,
       textScaleFactor: 1.0,
       maxLines: isMaxLines ? maxLine : null,
+      textAlign: textAlign,
       style: TextStyle(
         fontFamily: fontFamily,
         color: widColor,

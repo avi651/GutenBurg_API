@@ -23,7 +23,7 @@ class HomeComponents extends StatelessWidget {
         WidText(
           title: "Gutenberg",
           fontFamily: 'Montserrat-Black',
-          widColor: parseColor(blueColor), //parseColor(lightBlueColor),
+          widColor: parseColor(blueColor),
           fontSize: 48,
           fontWeight: FontWeight.bold,
         ),
@@ -69,7 +69,9 @@ class HomeComponents extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          createRoute(const DetailScreen()),
+                          createRoute(DetailScreen(
+                              detailHeaderTxt:
+                                  state.homeModel[index].title ?? "")),
                         );
                       },
                       child: HomeListViewCard(
